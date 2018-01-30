@@ -6,8 +6,6 @@ pipeline {
 				dir('spring') {
 					git 'https://github.com/IAmPolice/spring-servlet.git'
 				}
-            }
-			steps {
 				sh 'mvn compile package'
             }
         }
