@@ -3,12 +3,16 @@ pipeline {
     stages {
         stage ('clone Spring server') {
             steps {
-                git 'https://github.com/IAmPolice/spring-servlet.git'
+				dir('spring') {
+					git 'https://github.com/IAmPolice/spring-servlet.git'
+				}
             }
         }
         stage ('clone test') {
             steps {
-                git 'https://github.com/IAmPolice/test.git'
+				dir('spring') {
+					git 'https://github.com/IAmPolice/test.git'
+				}
             }
         }
         stage('Build') {
