@@ -1,21 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage ('clone Spring server') {
+        stage ('Build Spring-Server') {
             steps {
 				dir('spring') {
 					git 'https://github.com/IAmPolice/spring-servlet.git'
 				}
             }
-        }
-        stage('Build') {
-            steps {
-                sh 'javac HelloWorld.java'
-            }
-        }
-        stage('execute') {
-            steps {
-                sh 'java HelloWorld'
+			steps {
+				sh 'mvn compile package'
             }
         }
     }
