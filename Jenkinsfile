@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {
         stage ('clone Spring server') {
-            git 'https://github.com/IAmPolice/spring-servlet.git'
+            steps {
+                git 'https://github.com/IAmPolice/spring-servlet.git'
+            }
         }
         stage('Build') {
             steps {
