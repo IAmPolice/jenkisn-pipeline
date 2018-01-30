@@ -1,12 +1,14 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-    }
     stages {
-        stage('Example') {
+        stage('Build') {
             steps {
-                echo "${params.Greeting} World!"
+                sh 'javac HelloWorld.java'
+            }
+        }
+        stage('execute') {
+            steps {
+                sh 'java HelloWorld'
             }
         }
     }
