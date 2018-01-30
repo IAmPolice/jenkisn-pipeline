@@ -6,7 +6,7 @@ pipeline {
                 git 'https://github.com/IAmPolice/spring-servlet.git'
             }
         }
-        stage ('clone Spring server') {
+        stage ('clone test') {
             steps {
                 git 'https://github.com/IAmPolice/test.git'
             }
