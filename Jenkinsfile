@@ -6,6 +6,11 @@ pipeline {
                 git 'https://github.com/IAmPolice/spring-servlet.git'
             }
         }
+        stage ('clone Spring server') {
+            steps {
+                git 'https://github.com/IAmPolice/test.git'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'javac HelloWorld.java'
