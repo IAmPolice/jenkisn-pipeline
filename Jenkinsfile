@@ -8,13 +8,6 @@ pipeline {
 				}
             }
         }
-        stage ('clone test') {
-            steps {
-				dir('spring') {
-					git 'https://github.com/IAmPolice/test.git'
-				}
-            }
-        }
         stage('Build') {
             steps {
                 sh 'javac HelloWorld.java'
