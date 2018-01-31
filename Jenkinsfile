@@ -14,7 +14,7 @@ pipeline {
                     git 'https://github.com/IAmPolice/spring-servlet.git'
                 }
                 sh 'sudo mvn -f spring/ compile package'
-				sh 'mv spring/target/spring-servlet-0.0.1-SNAPSHOT.war ansible/re-springServer/files' 
+				sh 'sudo mv spring/target/spring-servlet-0.0.1-SNAPSHOT.war ansible/re-springServer/files' 
             }
         }
     }
